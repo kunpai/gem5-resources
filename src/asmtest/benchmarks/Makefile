@@ -17,21 +17,18 @@ instbasedir = $(UCB_VLSI_HOME)/install
 # Sources
 #--------------------------------------------------------------------
 
-bmarks= \
-	mt-vvadd \
-	mt-matmul \
-# bmarks = \
-# 	median \
-# 	qsort \
-# 	rsort \
-# 	towers \
-# 	vvadd \
-# 	memcpy \
-# 	multiply \
-# 	mm \
-# 	dhrystone \
-# 	spmv \
-# 	pmp \
+bmarks = \
+	median \
+	qsort \
+	rsort \
+	towers \
+	vvadd \
+	memcpy \
+	multiply \
+	mm \
+	dhrystone \
+	spmv \
+	pmp \
 	# vec-memcpy \
 	# vec-daxpy \
 	# vec-sgemm \
@@ -80,10 +77,27 @@ run: $(bmarks_riscv_out)
 
 junk += $(bmarks_riscv_bin) $(bmarks_riscv_dump) $(bmarks_riscv_hex) $(bmarks_riscv_out)
 
+bins_dir = bin
+
+move_riscv_files:
+	mkdir -p $(bins_dir)
+	mv $(bmarks_riscv_bin) $(bins_dir)
+
+.PHONY: move_riscv_files
+
+dumps_dir = dump
+
+move_riscv_dumps:
+	mkdir -p $(dumps_dir)
+	mv $(bmarks_riscv_dump) $(dumps_dir)
+
+.PHONY: move_riscv_dumps
+
+
 #------------------------------------------------------------
 # Default
 
-all: riscv
+all: riscv move_riscv_files move_riscv_dumps
 
 #------------------------------------------------------------
 # Install
