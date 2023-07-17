@@ -18,7 +18,8 @@ instbasedir = $(UCB_VLSI_HOME)/install
 #--------------------------------------------------------------------
 
 bmarks= \
-	qsort \
+	mt-vvadd \
+	mt-matmul \
 # bmarks = \
 # 	median \
 # 	qsort \
