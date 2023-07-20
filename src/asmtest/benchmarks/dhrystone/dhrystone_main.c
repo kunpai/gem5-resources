@@ -17,6 +17,8 @@ void debug_printf(const char* str, ...);
 
 #include <alloca.h>
 
+#include <gem5/include/gem5/m5ops.h>
+
 /* Global Variables: */
 
 Rec_Pointer     Ptr_Glob,
@@ -111,7 +113,7 @@ int main (int argc, char** argv)
     /* Start timer */
     /***************/
 
-    setStats(1);
+    m5_work_begin(0, 0);
     Start_Timer();
 
     for (Run_Index = 1; Run_Index <= Number_Of_Runs; ++Run_Index)
@@ -165,7 +167,7 @@ int main (int argc, char** argv)
     /**************/
 
     Stop_Timer();
-    setStats(0);
+    m5_work_end(0, 0);
 
     User_Time = End_Time - Begin_Time;
 
