@@ -134,16 +134,11 @@ run-riscv: $(bmarks_riscv_out)
  
 junk += $(bmarks_riscv_bin) $(bmarks_riscv_dump) $(bmarks_riscv_out) $(bmarks_riscv_obj)
 
-move_riscv_files:
-	mv mt-matmul.o mt-matmul.riscv
-	mv mt-vvadd.o mt-vvadd.riscv
-	mv mt-matmul.riscv mt-vvadd.riscv ../bin
-
-.PHONY: move_riscv_files
+ 
 #------------------------------------------------------------
 # Default
  
-all:  riscv move_riscv_files
+all:  riscv
  
 #------------------------------------------------------------
 # Install
