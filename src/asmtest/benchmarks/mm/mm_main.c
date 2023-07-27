@@ -30,14 +30,14 @@ void main(int cid, int nc)
       b[i*n+j] = (t)(s = lfsr(s));
   memset(c, 0, m*n*sizeof(c[0]));
 
-  size_t instret, cycles;
+  // size_t instret, cycles;
   for (int i = 0; i < R; i++)
   {
-    instret = -read_csr(minstret);
-    cycles = -read_csr(mcycle);
+    // instret = -read_csr(minstret);
+    // cycles = -read_csr(mcycle);
     mm(m, n, p, a, p, b, n, c, n);
-    instret += read_csr(minstret);
-    cycles += read_csr(mcycle);
+    // instret += read_csr(minstret);
+    // cycles += read_csr(mcycle);
   }
 
   asm volatile("fence");

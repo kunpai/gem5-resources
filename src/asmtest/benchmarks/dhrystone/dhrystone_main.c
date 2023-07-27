@@ -114,7 +114,7 @@ int main (int argc, char** argv)
     /***************/
 
     m5_work_begin(0, 0);
-    Start_Timer();
+    // Start_Timer();
 
     for (Run_Index = 1; Run_Index <= Number_Of_Runs; ++Run_Index)
     {
@@ -166,7 +166,7 @@ int main (int argc, char** argv)
     /* Stop timer */
     /**************/
 
-    Stop_Timer();
+    // Stop_Timer();
     m5_work_end(0, 0);
 
     User_Time = End_Time - Begin_Time;
