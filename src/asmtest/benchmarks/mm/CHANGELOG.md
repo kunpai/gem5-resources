@@ -6,4 +6,4 @@
 
 ## Known Issues
 
-* For the instruction `csrr a5,minstret`, on running in gem5, the error message: `minstret is not accessible in 0` is received.
+* This benchmark does not run to completion. This is a known issue and is being investigated.
