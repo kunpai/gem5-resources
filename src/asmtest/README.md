@@ -1,5 +1,5 @@
 ---
-title: gem5 Specifc RISC-V tests
+title: gem5 Specific RISC-V tests
 tags:
     - testing
     - riscv
@@ -87,6 +87,8 @@ How to compile this test suite
 1. Install RISC-V GNU toolchain. Source code and instruction on how to install
 it can be found here: <https://github.com/riscv/riscv-gnu-toolchain>.
 
-2. Run `make`
+2. Put gem5 with compiled m5ops in the `common` directory. Documentation on how to do it can be found here: <http://www.gem5.org/documentation/general_docs/m5ops>.
 
-3. Test binaries are in `bin`
+3. Run `make`.
+
+4. Test binaries are in `bin`.
