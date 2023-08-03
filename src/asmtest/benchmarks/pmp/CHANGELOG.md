@@ -6,4 +6,4 @@
 
 ## Known Issues
 
-* For the instruction `csrwi pmpcfg0,0`, on running in gem5, the error message: `pmpcfg0 is not accessible in 0` is received.
+* This benchmark uses `read_csr` and `write_csr` functions. These use inline assembly and thus, do not translate to gem5. Currently, a gem5 equivalent is being investigated.
